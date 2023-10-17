@@ -12,8 +12,10 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+        <!-- link icon -->
         <x-nav-item label="Dashboard" icon="fas fa-tachometer-alt" :link="route('dashboard')"/>
-
+        <x-nav-item label="User Admin" icon="fas fa-users" :link="route('admin.index')"/>
+        <!-- end link icon -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
