@@ -9,15 +9,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href=" {{ route('home') }}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('kamar')  }}">Kamar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('fasilitas') }}">Fasilitas</a>
-            </li>
+            <x-nav-item-tamu label="Home" :link="route('home')"/>
+            <x-nav-item-tamu label="Kamar" :link="route('kamar')"/>
+            <x-nav-item-tamu label="Fasilitas" :link="route('fasilitas')"/>
         </ul>
         </div>
     </div>
