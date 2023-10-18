@@ -1,22 +1,55 @@
-@extends('layouts.tamu')
+@extends('layouts.tamu', ['title'=>'kamar'])
 
 @section('content')
 
 <x-form-pesan />
-<h1 class="text-center my-4">About</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique consequat lectus id laoreet. 
-        Ut id scelerisque nunc, ut pretium mi. Nam vitae ex quis nibh porta sollicitudin sit amet sed diam. 
-        Cras venenatis justo lacus, non vestibulum purus ullamcorper ut. Donec nec porttitor nisi, ut condimentum lectus. 
-        Sed volutpat enim felis, quis vestibulum nulla semper quis. Praesent eget mollis mauris.</p>
-
-    <p>Vivamus egestas, mi in commodo condimentum, erat lorem imperdiet urna, eget ultrices est sem id lorem. 
-        Aenean tincidunt, dui id efficitur aliquam, dolor magna efficitur mi, eu elementum metus purus at libero. 
-        Morbi elementum eleifend orci. Curabitur ultricies varius iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Quisque non tellus ac libero imperdiet finibus. Vivamus semper egestas porta.</p>
-
-        <p>Vivamus egestas, mi in commodo condimentum, erat lorem imperdiet urna, eget ultrices est sem id lorem. 
-            Aenean tincidunt, dui id efficitur aliquam, dolor magna efficitur mi, eu elementum metus purus at libero. 
-            Morbi elementum eleifend orci. Curabitur ultricies varius iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Quisque non tellus ac libero imperdiet finibus. Vivamus semper egestas porta.</p>
-
+<h1 class="text-center my-4">Kamar</h1>
+<hr>
+    <div class="row kamar mb-3">
+        <div class="col-md-4">
+            <img src="images/kamar_standar.jpg" class="img-fluid rounded img-thumbnail" />
+        </div>
+        <div class="col-md">
+            <h2><a href="#"> Standar Room </a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin leo dui, sit amet finibus ipsum bibendum sed. 
+                Nunc lacinia congue scelerisque. Donec ac tincidunt turpis, nec eleifend nisl. Morbi ligula sem, ornare in consectetur vel, molestie at libero. Nullam aliquet lacinia justo vitae tincidunt. Proin non consectetur turpis. Suspendisse nisl ligula, tristique quis vestibulum quis, ultrices eu ligula. 
+                Etiam tristique ligula lacinia nunc vehicula faucibus.
+            </p>
+            <p>
+                Rp. 300. 000 / malam
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row kamar mb-3">
+        <div class="col-md-4">
+            <img src="images/kamar_suite.jpg" class="img-fluid rounded img-thumbnail" />
+        </div>
+        <div class="col-md">
+            <h2><a href="#"> Suite Room </a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin leo dui, sit amet finibus ipsum bibendum sed. 
+                Nunc lacinia congue scelerisque. Donec ac tincidunt turpis, nec eleifend nisl. Morbi ligula sem, ornare in consectetur vel, molestie at libero. Nullam aliquet lacinia justo vitae tincidunt. Proin non consectetur turpis. Suspendisse nisl ligula, tristique quis vestibulum quis, ultrices eu ligula. 
+                Etiam tristique ligula lacinia nunc vehicula faucibus.
+            </p>
+            <p>
+                Rp. 400. 000 / malam
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row kamar mb-3">
+        <div class="col-md-4">
+            <img src="images/kamar_deluxe.jpg" class="img-fluid rounded img-thumbnail" />
+        </div>
+        <div class="col-md">
+            <h2><a href="#"> Deluxe Room </a></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin leo dui, sit amet finibus ipsum bibendum sed. 
+                Nunc lacinia congue scelerisque. Donec ac tincidunt turpis, nec eleifend nisl. Morbi ligula sem, ornare in consectetur vel, molestie at libero. Nullam aliquet lacinia justo vitae tincidunt. Proin non consectetur turpis. Suspendisse nisl ligula, tristique quis vestibulum quis, ultrices eu ligula. 
+                Etiam tristique ligula lacinia nunc vehicula faucibus.
+            </p>
+            <p>
+                Rp. 700. 000 / malam
+            </p>
+        </div>
+    </div>
 @endsection
