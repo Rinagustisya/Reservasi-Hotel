@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// route login sesuai role
+Route::group([
+    'prefix' => config('admin.path'), 
+    'middleware' =>['auth:admin'],
+], function(){
+    Route::view('/', 'dashboard')->name('dashboard');
+    Route::view('admin', 'admin.index')->name('admin.index');
+});
+Route::view(config('admin.path').'/login', 'auth.login')->name('admin.login');
+// end login sesuai role
+
 Route::view('kamar', 'kamar')->name('kamar');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
-Route::view('admin', 'dashboard')->name('dashboard');
-Route::view('admin/admin', 'admin.index')->name('admin.index');
-Route::view('admin/login', 'auth.login')->name('auth.login');
