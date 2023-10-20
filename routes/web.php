@@ -27,7 +27,10 @@ Route::group([
     Route::group(['middleware' =>'auth:admin'], function(){
         Route::post('logout', 'LoginAdminController@logout')->name('admin.logout');
         Route::view('/', 'dashboard')->name('dashboard');
+
+        Route::group(['middleware' =>['can:role,"admin"']], function(){
         Route::view('admin', 'admin.index')->name('admin.index');
+        });
     });
 });
 // end login sesuai role
