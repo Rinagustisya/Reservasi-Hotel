@@ -26,7 +26,7 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Masuk Untuk Menuju Ke Aplikasi</p>
 
-                <form action="../../index3.html" method="post">
+                <form action="?" method="post">
                     <div class="input-group mb-3">
                         <input type="TEXT" class="form-control" placeholder="Username">
                         <div class="input-group-append">
