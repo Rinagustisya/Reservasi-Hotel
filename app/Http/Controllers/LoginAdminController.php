@@ -19,7 +19,7 @@ class LoginAdminController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'username'  => 'required|email|exists:admins',
+            'username'  => 'required|exists:admins',
             'password'  => 'required'
         ]);
 

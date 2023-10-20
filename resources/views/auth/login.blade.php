@@ -28,25 +28,31 @@
 
                 <form action="?" method="post">
                     <div class="input-group mb-3">
-                        <input type="TEXT" class="form-control" placeholder="Username">
+                        <input type="text" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid':'' }}" placeholder="Username">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
                             </div>
                         </div>
+                        @error('username')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid':'' }}" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
+                                <input type="checkbox" id="remember" name="remember">
                                 <label for="remember">
                                     Ingat Saya
                                 </label>
@@ -54,7 +60,9 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                            <button type="submit" class="btn btn-primary btn-block">
+                              <i class="fas fa-sign-in-alt"></i>  Log In
+                            </button>
                         </div>
                         <!-- /.col -->
                     </div>
