@@ -19,13 +19,16 @@ Route::get('/', function () {
 
 // route login sesuai role
 Route::group([
-    'prefix' => config('admin.path'), 
-    'middleware' =>['auth:admin'],
+    'prefix' => config('admin.path')
 ], function(){
     Route::view('/', 'dashboard')->name('dashboard');
     Route::view('admin', 'admin.index')->name('admin.index');
+
+    Route::group(['middleware' =>'auth:admin'], function(){
+        Route::get('login', 'LoginAdminController@formLogin')->name('admin.login');
+        Route::post('login', 'LoginAdminController@login');
+    });
 });
-Route::view(config('admin.path').'/login', 'auth.login')->name('admin.login');
 // end login sesuai role
 
 Route::view('kamar', 'kamar')->name('kamar');
