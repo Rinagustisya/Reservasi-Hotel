@@ -14,7 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data = Admin::orderBy('id')->get();
+        $data = Admin::orderBy('id')
+                ->paginate(2);
         return view('admin.index', ['data'=>$data]);
     }
 
