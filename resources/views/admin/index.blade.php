@@ -6,6 +6,9 @@
 
 @section('content')
 <div class="card">
+    <div class="card-header">
+       <x-search />
+    </div>
     <div class="card-body">
         <table class="table table-hover table-striped">
             <thead>
@@ -31,7 +34,7 @@
     </div>
 
     <div class="card-body py-0">
-        {{ $data->links('pagenation') }}
+        {{ $data->appends(['search' => request()->search ])->links('pagenation') }}
     </div>
 </div>
 @endsection

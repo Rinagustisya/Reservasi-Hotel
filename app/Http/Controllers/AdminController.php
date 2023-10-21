@@ -12,9 +12,14 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Admin::orderBy('id')
+        $search = $request->search;
+        $data = Admin::select('id', 'nama', 'username', 'role')
+                ->when($search, function($query, $search){
+                    return $query->where('nama', 'like', "%{$search}%");
+                })
+                ->orderBy('id')
                 ->paginate(2);
         return view('admin.index', ['data'=>$data]);
     }
