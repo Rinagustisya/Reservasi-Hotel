@@ -6,9 +6,14 @@
 
 @section('content')
 <div class="row">
-    <div class="col-4">
-        <form action="" method="post" class="card">
-            
+    <div class="col-12">
+        <form action="" method="post" class="card card-primary">
+            <div class="card-header">
+                <i class="fas fa-plus-circle"></i> Tambah
+            </div>
+            <div class="card-body">
+                
+            </div>
         </form>
     </div>
 </div>
