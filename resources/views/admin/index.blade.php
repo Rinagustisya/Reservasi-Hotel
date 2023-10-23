@@ -7,6 +7,9 @@
 @section('content')
 <div class="card">
     <div class="card-header">
+        <!-- button create -->
+        <x-btn-create :link="route('admin.create')" />
+        <!-- end button -->
        <x-search />
     </div>
     <div class="card-body">
