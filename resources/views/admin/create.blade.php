@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-           <x-form-create :action="route('admin.create')">
+           <x-form-create :action="route('admin.store')">
                <x-input-admin label="Nama Lengkap" name="nama" />
                <x-input-admin label="Username" name="username" />
                <x-input-admin label="Password" name="password" type="password" />

@@ -42,7 +42,11 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'username' => 'required|alpha_dash|unique:admins',
+            'password' => 'required|min:4|confirmed'
+        ]);
     }
 
     /**
