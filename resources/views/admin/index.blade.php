@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<x-status/>
 <div class="card">
     <div class="card-header">
         <!-- button create -->

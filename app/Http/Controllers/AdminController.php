@@ -55,7 +55,7 @@ class AdminController extends Controller
             'role' =>'resepsionis',
         ]);
 
-        return redirect()->route('admin.index')->with('status', 'User Telah Ditambahkan!');
+        return redirect()->route('admin.index')->with('status', 'store');
     }
 
     /**
