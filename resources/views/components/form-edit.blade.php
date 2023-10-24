@@ -4,6 +4,7 @@
         <i class="fas fa-edit"></i> Edit
     </div>
     <div class="card-body">
+        @method('put')
         <?= $slot ?>
     </div>
     <div class="card-footer text-right">
