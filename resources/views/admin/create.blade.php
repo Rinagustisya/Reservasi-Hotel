@@ -7,17 +7,12 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-        <form action="" method="post" class="card card-primary">
-            <div class="card-header">
-                <i class="fas fa-plus-circle"></i> Tambah
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="">Nama</label>
-                    <input type="text" name="nama" class="form-control">
-                </div>
-            </div>
-        </form>
+           <x-form-create :action="route('admin.create')">
+               <x-input-admin label="Nama Lengkap" name="nama" />
+               <x-input-admin label="Username" name="username" />
+               <x-input-admin label="Password" name="password" type="password" />
+               <x-input-admin label="Konfirmasi Password" name="password_confir" type="password" />
+           </x-form-create>
     </div>
 </div>
 @endsection
