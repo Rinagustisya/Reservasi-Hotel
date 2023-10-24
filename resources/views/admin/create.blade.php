@@ -12,7 +12,10 @@
                 <i class="fas fa-plus-circle"></i> Tambah
             </div>
             <div class="card-body">
-                
+                <div class="form-group">
+                    <label for="">Nama</label>
+                    <input type="text" name="nama" class="form-control">
+                </div>
             </div>
         </form>
     </div>
