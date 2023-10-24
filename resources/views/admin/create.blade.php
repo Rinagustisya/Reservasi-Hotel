@@ -11,7 +11,7 @@
                <x-input-admin label="Nama Lengkap" name="nama" />
                <x-input-admin label="Username" name="username" />
                <x-input-admin label="Password" name="password" type="password" />
-               <x-input-admin label="Konfirmasi Password" name="password_confir" type="password" />
+               <x-input-admin label="Konfirmasi Password" name="password_confirmation" type="password" />
            </x-form-create>
     </div>
 </div>

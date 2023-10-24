@@ -47,6 +47,15 @@ class AdminController extends Controller
             'username' => 'required|alpha_dash|unique:admins',
             'password' => 'required|min:4|confirmed'
         ]);
+
+        Admin::create([
+            'nama' =>$request->nama,
+            'username' =>$request->username,
+            'password' =>bcrypt($request->password),
+            'role' =>'resepsionis',
+        ]);
+
+        return redirect()->route('admin.index')->with('status', 'User Telah Ditambahkan!');
     }
 
     /**
