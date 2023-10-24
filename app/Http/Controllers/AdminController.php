@@ -87,9 +87,13 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Admin $admin)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'username' => "required|alpha_dash|unique:admins,username,{$admin->id}",
+            'password' => 'nullable|min:4|confirmed'
+        ]);
     }
 
     /**
