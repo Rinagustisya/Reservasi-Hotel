@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-info shadow">
     <div class="container">
         <a class="navbar-brand h1" href="{{ route('home')}}">
-            <img src="images/logo.JPEG" width="30" height="30" class="d-inline-block align-top img-circle" alt="Logo">
+            <img src="images/logobulat.PNG" width="30" height="30" class="d-inline-block align-top img-circle" alt="Logo">
             Hotel Rina
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">

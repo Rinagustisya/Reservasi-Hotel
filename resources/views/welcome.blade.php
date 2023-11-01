@@ -1,4 +1,4 @@
-@extends('layouts.tamu', ['title'=>'home'])
+@extends('layouts.tamu', ['title'=>'Home'])
 
 @section('content')
 
