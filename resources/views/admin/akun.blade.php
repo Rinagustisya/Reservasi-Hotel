@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-           <x-form-edit :action="route('admin.akun')">
+           <x-form-edit :action="route('admin.akun')" :header-route="false">
                <x-input-admin label="Nama Lengkap" name="nama" :value="$row->nama"/>
                <x-input-admin label="Username" name="username" :value="$row->username" />
                <x-input-admin label="Password" name="password" type="password" />
