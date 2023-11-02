@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<x-status/>
 <div class="row">
     <div class="col-12">
            <x-form-edit :action="route('admin.akun')" :header-route="false">

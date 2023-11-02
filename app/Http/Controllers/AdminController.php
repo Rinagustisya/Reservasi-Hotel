@@ -129,15 +129,36 @@ class AdminController extends Controller
 
     public function akun(Admin $admin)
     {
-        $admin = Auth::user();
+        $admin = Auth::user();  
 
         return view('admin.akun', ['row'=>$admin]);
     }
 
-    public function UpdateAkun(Admin $admin)
+    public function UpdateAkun(Request $request)
     {
         $admin = Auth::user();
 
-        return view('admin.akun', ['row'=>$admin]);
+        $request->validate([
+            'nama' => 'required',
+            'username' => 'required|alpha_dash|unique:admins,username,{$admin->id}',
+            'password' => 'nullable|min:4|confirmed'
+        ]);
+
+        if ($request->password) {
+            $arr = [
+                'nama' =>$request->nama,
+                'username' =>$request->username,
+                'password' =>bcrypt($request->password)
+            ];
+        } else {
+            $arr = [
+                'nama' => $request->nama,
+                'username' => $request->username
+            ];
+        }
+
+        $admin->update($arr);
+
+        return back()->with('status', 'update');
     }
 }
