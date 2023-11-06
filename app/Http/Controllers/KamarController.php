@@ -41,7 +41,13 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_kamar' => 'required|min:3',
+            'foto_kamar' => 'required|image|mimes:png,jpg,jpeg',
+            'jum_kamar' => 'required',
+            'harga_kamar' => 'required',
+            'deskripsi_kamar' => 'required|min:10'
+        ]);
     }
 
     /**

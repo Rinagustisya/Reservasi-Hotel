@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-           <x-form-create :action="route('kamar.store')">
+           <x-form-create :action="route('kamar.store')" :upload="true">
                <x-input-admin label="Nama" name="nama_kamar" />
                <x-input-admin label="Foto" name="foto_kamar" type="file" />
                <x-input-admin label="Jumlah" name="jum_kamar" type="number"/>

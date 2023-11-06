@@ -1,5 +1,5 @@
-@props(['action','header-route'=>true])
-<form action="{{ $action }}" method="post" class="card card-primary">
+@props(['action','header-route'=>true, 'upload'=>false])
+<form action="{{ $action }}" method="post" class="card card-primary"<?= $upload ? ' enctype="multipart/form-data"' : '' ?>>
     @if ('header-route')
     <div class="card-header">
         <i class="fas fa-edit"></i> Edit
