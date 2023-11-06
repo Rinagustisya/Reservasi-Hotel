@@ -30,7 +30,7 @@ class KamarController extends Controller
      */
     public function create()
     {
-        //
+        return view('kamar.create');
     }
 
     /**
