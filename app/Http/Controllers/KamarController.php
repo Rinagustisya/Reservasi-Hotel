@@ -16,9 +16,9 @@ class KamarController extends Controller
         $search = $request->search;
         $data = Kamar::select('id', 'nama_kamar', 'foto_kamar', 'jum_kamar', 'harga_kamar', 'deskripsi_kamar')
                 ->when($search, function($query, $search){
-                    return $query->where('nama_kamar', 'like', "%{$search}%");
+                    return $query->where('nama_kamar', 'like', "%{$search}%")
+                            ->orWhere('harga_kamar', 'like', "%{$search}%");
                 })
-                ->orderBy('id')
                 ->paginate(5);
         return view('kamar.index', ['data'=>$data]);
     }
