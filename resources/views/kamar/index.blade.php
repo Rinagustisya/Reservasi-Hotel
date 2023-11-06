@@ -28,8 +28,8 @@
                 @foreach ( $data as $row ) 
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $row->nama_kamar }}</td>
-                    <td>{{ $row->harga_kamar}}</td>
+                    <td>{{ ucwords($row->nama_kamar) }}</td>
+                    <td>Rp. {{ number_format($row->harga_kamar,2,',','.') }}</td>
                     <td>{{ $row->jum_kamar }}</td>
                 </tr>
                 @endforeach
