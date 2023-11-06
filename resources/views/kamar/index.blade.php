@@ -18,10 +18,9 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama User</th>
-                    <th>Username</th>
-                    <th>Role</th>
-                    
+                    <th>Nama Kamar</th>
+                    <th>Harga Kamar</th>
+                    <th>Jumlah Kamar</th>  
                 </tr>
             </thead>
             <tbody>
