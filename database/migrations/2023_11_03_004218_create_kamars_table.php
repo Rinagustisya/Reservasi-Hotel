@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('foto_kamar')->nullable();
             $table->integer('jum_kamar');
             $table->integer('harga_kamar')->nullable();
-            $table->string('deskripsi_kamar')->nullable();
+            $table->text('deskripsi_kamar')->nullable();
             // $table->timestamps();
         });
     }

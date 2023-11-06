@@ -20,7 +20,8 @@
                     <th>No.</th>
                     <th>Nama Kamar</th>
                     <th>Harga Kamar</th>
-                    <th>Jumlah Kamar</th>  
+                    <th>Jumlah Kamar</th> 
+                    <!-- <th>Deskripsi Kamar</th>  -->
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                     <td>{{ ucwords($row->nama_kamar) }}</td>
                     <td>Rp. {{ number_format($row->harga_kamar,2,',','.') }}</td>
                     <td>{{ $row->jum_kamar }}</td>
+                    <!-- <td>{{ $row->deskripsi_kamar }}</td> -->
                 </tr>
                 @endforeach
             </tbody>
