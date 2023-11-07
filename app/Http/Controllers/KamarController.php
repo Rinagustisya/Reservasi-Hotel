@@ -49,9 +49,9 @@ class KamarController extends Controller
             'deskripsi_kamar' => 'required|min:10'
         ]);
 
-        $ext = $request->foto->getClientOriginalExtension();
+        $ext = $request->foto_kamar->getClientOriginalExtension();
         $filename = rand(9,999).'_'.time().'.'.$ext;
-        $request->foto->move('images/kamar', $filename);
+        $request->foto_kamar->move('images/kamar', $filename);
     }
 
     /**
