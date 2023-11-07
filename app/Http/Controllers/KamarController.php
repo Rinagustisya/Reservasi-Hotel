@@ -143,8 +143,17 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kamar $kamar)
     {
-        //
+        if ( $kamar->foto_kamar ) {
+            $file = 'images/kamar/'.$kamar->foto_kamar;
+            if (file_exists($file)) {
+                unlink($file);
+            }
+        }
+
+        $kamar->delete();
+
+        return back()->with('status', 'destroy');
     }
 }
