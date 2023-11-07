@@ -93,9 +93,48 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kamar $kamar)
     {
-        //
+        $request->validate([
+            'nama_kamar' => 'required|min:3',
+            'foto_kamar' => 'nullable|image|mimes:png,jpg,jpeg',
+            'jum_kamar' => 'required',
+            'harga_kamar' => 'required',
+            'deskripsi_kamar' => 'required|min:10'
+        ]);
+
+        if ( $kamar->foto_kamar && $request->foto_kamar ) {
+            $file = 'images/kamar/'.$kamar->foto_kamar;
+            if (file_exists($file)) {
+                unlink($file);
+            }
+        }
+
+        if ( $request->foto_kamar ) {
+            $ext = $request->foto_kamar->getClientOriginalExtension();
+            $filename = rand(9,999).'_'.time().'.'.$ext;
+            $request->foto_kamar->move('images/kamar', $filename);
+
+            $arr = [
+                'nama_kamar' => $request->nama_kamar,
+                'foto_kamar' => $filename,
+                'jum_kamar' => $request->jum_kamar,
+                'harga_kamar' => $request->harga_kamar,
+                'deskripsi_kamar' => $request->deskripsi_kamar
+            ];
+
+        } else {
+            $arr = [
+                'nama_kamar' => $request->nama_kamar,
+                'jum_kamar' => $request->jum_kamar,
+                'harga_kamar' => $request->harga_kamar,
+                'deskripsi_kamar' => $request->deskripsi_kamar
+            ];
+        }
+
+        $kamar->update($arr);
+
+        return redirect()->route('kamar.index')->with('status', 'update');
     }
 
     /**

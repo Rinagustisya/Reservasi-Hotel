@@ -7,11 +7,11 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-           <x-form-edit :action="route('kamar.store',['kamar'=>$row->id])" :upload="true">
+           <x-form-edit :action="route('kamar.update',['kamar'=>$row->id])" :upload="true">
                <x-input-admin label="Nama" name="nama_kamar" :value="$row->nama_kamar" />
                @if ($row->foto_kamar)
                    <div class="form-group">
-                    <img src="{{ url('images/kamar/'.$row->foto_kamar) }}" width="200" height="200">
+                    <img src="{{ url('images/kamar/'.$row->foto_kamar) }}" class="image-fluid">
                    </div>
                @endif
                <x-input-admin label="Foto" name="foto_kamar" type="file" keterangan="Foto bertipe : png, jpg, jpeg" :value="$row->foto_kamar" />
