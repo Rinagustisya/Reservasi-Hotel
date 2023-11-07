@@ -32,6 +32,10 @@
                     <td>{{ ucwords($row->nama_kamar) }}</td>
                     <td>Rp. {{ number_format($row->harga_kamar,2,',','.') }}</td>
                     <td>{{ $row->jum_kamar }}</td>
+                    <td>
+                        <x-btn-edit :link="route('kamar.edit',['kamar'=>$row->id])" />
+                        <x-btn-delete :link="route('kamar.destroy',['kamar'=>$row->id])" />
+                    </td>
                     <!-- <td>{{ $row->deskripsi_kamar }}</td> -->
                 </tr>
                 @endforeach

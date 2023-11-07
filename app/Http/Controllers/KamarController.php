@@ -72,7 +72,7 @@ class KamarController extends Controller
      */
     public function show($id)
     {
-        //
+        return abort(404);
     }
 
     /**
@@ -81,9 +81,9 @@ class KamarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kamar $kamar)
     {
-        //
+        return view('kamar.edit', ['row'=>$kamar]);
     }
 
     /**
