@@ -10,8 +10,8 @@
            <x-form-create :action="route('kamar.store')" :upload="true">
                <x-input-admin label="Nama" name="nama_kamar" />
                <x-input-admin label="Foto" name="foto_kamar" type="file" keterangan="Foto bertipe : png, jpg, jpeg"/>
-               <x-input-admin label="Jumlah" name="jum_kamar" type="number"/>
-               <x-input-admin label="Harga" name="harga_kamar" type="number"/>
+               <x-input-admin label="Jumlah Kamar tersedia" name="jum_kamar" type="number"/>
+               <x-input-admin label="Harga per Malam" name="harga_kamar" type="number"/>
                <x-textArea label="Deskripsi" name="deskripsi_kamar"/>
             </x-form-create>
     </div>
