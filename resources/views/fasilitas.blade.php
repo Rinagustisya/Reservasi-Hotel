@@ -2,7 +2,10 @@
 
 @section('content')
 
+
 <x-form-pesan />
+
+
 <h1 class="text-center my-4">Fasilitas</h1>
     
     <div class="row fasilitas">

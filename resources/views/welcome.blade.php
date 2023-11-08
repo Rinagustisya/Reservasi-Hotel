@@ -4,19 +4,12 @@
 
 <x-form-pesan />
 <h1 class="text-center my-4">About</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique consequat lectus id laoreet. 
-        Ut id scelerisque nunc, ut pretium mi. Nam vitae ex quis nibh porta sollicitudin sit amet sed diam. 
-        Cras venenatis justo lacus, non vestibulum purus ullamcorper ut. Donec nec porttitor nisi, ut condimentum lectus. 
-        Sed volutpat enim felis, quis vestibulum nulla semper quis. Praesent eget mollis mauris.</p>
+    <p>Selamat datang di "Hotel Rina"! Hotel kami adalah surga tersembunyi yang menawarkan pengalaman luar biasa bagi para wisatawan yang mencari ketenangan dan keindahan alam. Terletak di tepi pantai dengan pemandangan laut yang menakjubkan, Rina Resort adalah tempat ideal untuk melepaskan penat dan meresapi keindahan alam.
+    </p>
 
-    <p>Vivamus egestas, mi in commodo condimentum, erat lorem imperdiet urna, eget ultrices est sem id lorem. 
-        Aenean tincidunt, dui id efficitur aliquam, dolor magna efficitur mi, eu elementum metus purus at libero. 
-        Morbi elementum eleifend orci. Curabitur ultricies varius iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Quisque non tellus ac libero imperdiet finibus. Vivamus semper egestas porta.</p>
+    <p>Kami bangga dengan keramahan tim kami yang siap melayani setiap kebutuhan Anda dengan senyum ramah. Nikmati matahari terbenam yang spektakuler, jalan-jalan santai di tepi pantai, dan malam yang romantis di bawah bintang-bintang.
+    </p>
 
-        <p>Vivamus egestas, mi in commodo condimentum, erat lorem imperdiet urna, eget ultrices est sem id lorem. 
-            Aenean tincidunt, dui id efficitur aliquam, dolor magna efficitur mi, eu elementum metus purus at libero. 
-            Morbi elementum eleifend orci. Curabitur ultricies varius iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            Quisque non tellus ac libero imperdiet finibus. Vivamus semper egestas porta.</p>
+        <p>Rina Resort adalah destinasi impian untuk liburan Anda, tempat di mana kenangan tak terlupakan dibuat. Jadi, jadikanlah kunjungan Anda menjadi perjalanan yang penuh inspirasi dan nikmati keindahan alam serta layanan luar biasa yang kami tawarkan. Selamat datang di surga tersembunyi kami, di mana kebahagiaan Anda adalah prioritas utama kami!</p>
 
 @endsection
