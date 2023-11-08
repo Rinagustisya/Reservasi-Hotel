@@ -31,6 +31,10 @@ Route::group([
         Route::get('/akun', 'AdminController@akun')->name('admin.akun');
         Route::put('/akun', 'AdminController@UpdateAkun');
 
+        Route::group(['middleware' =>['can:role,"resepsionis"']], function(){
+            Route::get('/moni', 'MonitoringController@index')->name('moni');
+        });
+        
         Route::group(['middleware' =>['can:role,"admin"']], function(){
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
@@ -39,7 +43,6 @@ Route::group([
     });
 });
 // end login sesuai role
-Route::view('/moni', 'kamar.moni')->name('moni');
 Route::view('kamar', 'kamar')->name('kamar');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
 Route::post('tambah', 'PesanController@create')->name('pesan.create');
