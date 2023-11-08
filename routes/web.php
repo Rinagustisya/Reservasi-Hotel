@@ -34,11 +34,12 @@ Route::group([
         Route::group(['middleware' =>['can:role,"admin"']], function(){
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
+        Route::resource('pesan', 'MonitoringController');
         });
     });
 });
 // end login sesuai role
-
+Route::view('/moni', 'kamar.moni')->name('moni');
 Route::view('kamar', 'kamar')->name('kamar');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
 Route::post('tambah', 'PesanController@create')->name('pesan.create');
