@@ -1,7 +1,7 @@
 @extends('layouts.tamu', ['title'=>'Home'])
 
 @section('content')
-
+<x-status/>
 <x-form-pesan />
 <h1 class="text-center my-4">About</h1>
     <p>Selamat datang di "Hotel Rina"! Hotel kami adalah surga tersembunyi yang menawarkan pengalaman luar biasa bagi para wisatawan yang mencari ketenangan dan keindahan alam. Terletak di tepi pantai dengan pemandangan laut yang menakjubkan, Rina Resort adalah tempat ideal untuk melepaskan penat dan meresapi keindahan alam.

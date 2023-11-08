@@ -41,3 +41,5 @@ Route::group([
 
 Route::view('kamar', 'kamar')->name('kamar');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
+Route::post('tambah', 'PesanController@create')->name('pesan.create');
+

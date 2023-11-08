@@ -6,7 +6,7 @@
 
 <div class="modal fade" id="pesan" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
-    <form class="modal-content" method="post" action="">
+    <form class="modal-content" method="post" action="{{ route('pesan.create') }}" enctype="multipart/form-data">
       <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">
             <i class="fas fa-pen"></i></fa-pen-to-square> Form User
@@ -68,7 +68,7 @@
           <div class="card col-12">
             <div class="card-body">
               <label>Jenis Kamar</label>
-                  <select name="jenis_kamar" class="form-control" id="jenis_kamar">
+                  <select name="jenis_kamar" class="aku-cinta-gisel" id="jenis_kamar">
                       <option value="Standar Room">Standar Room</option>
                       <option value="Suite Room">Suite Room</option>
                       <option value="Honey Moon Room">Honey Moon Room</option>
@@ -106,7 +106,7 @@
                   <input type="file" class="form-control" id="foto_user" name="foto_user"/>
                   <div class="text-muted">
                       <small>
-                          Upload tanda pengenal anda. contoh : ktp
+                          Upload tanda pengenal anda. Contoh : ktp
                       </small>
                   </div>
                   @if ($errors->has('foto_user'))
@@ -139,9 +139,13 @@ $(function name(params) {
         var button = $(event.relatedTarget) 
         var recipient = button.data('whatever') 
         var modal = $(this)
-        modal.find('.modal-content').attr('action', recipient)
+        modal.find('.modal-content')
         modal.find('.modal-body input').val(recipient)
         });
+
+        $(document).ready(function() {
+          $('.aku-cinta-gisel').select2();
+          });
     });
 </script>
 @endpush   
