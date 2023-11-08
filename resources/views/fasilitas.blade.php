@@ -1,4 +1,4 @@
-@extends('layouts.tamu', ['title'=>'fasilitas'])
+@extends('layouts.tamu', ['title'=>'Fasilitas'])
 
 @section('content')
 
@@ -66,7 +66,7 @@
                     <img src="images/kamar_standar.jpg" class="img-fluid rounded" />
                 </div>
                 <div class="card-footer">
-                    Rp. 300.000
+                Rp. 500. 000
                 </div>
             </a>
         </div>
@@ -79,7 +79,7 @@
                     <img src="images/kamar_suite.jpg" class="img-fluid rounded" />
                 </div>
                 <div class="card-footer">
-                    Rp. 400.000
+                Rp. 750. 000
                 </div>
             </a>
         </div>
@@ -92,7 +92,33 @@
                     <img src="images/kamar_deluxe.jpg" class="img-fluid rounded" />
                 </div>
                 <div class="card-footer">
-                    Rp. 700.000
+                Rp. 950. 000
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mx-auto">
+            <a class="card card-light" href="#">
+                <div class="card-header">
+                    Premium Room
+                </div>
+                <div class="card-body p-1">
+                    <img src="images/prem.jpg" class="img-fluid rounded" />
+                </div>
+                <div class="card-footer">
+                Rp. 950. 000
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 mx-auto">
+            <a class="card card-light" href="#">
+                <div class="card-header">
+                    Honey Moon Room
+                </div>
+                <div class="card-body p-1">
+                    <img src="images/honey.png" class="img-fluid rounded" />
+                </div>
+                <div class="card-footer">
+                Rp. 1.500. 000
                 </div>
             </a>
         </div>

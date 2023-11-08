@@ -52,7 +52,7 @@
     <hr>
     <div class="row kamar mb-3">
         <div class="col-md-4">
-            <img src="images/kamar_suite.jpg" class="img-fluid rounded img-thumbnail" />
+            <img src="images/prem.jpg" class="img-fluid rounded img-thumbnail" />
         </div>
         <div class="col-md">
             <h2><a href="#"> Premium Room </a></h2>
