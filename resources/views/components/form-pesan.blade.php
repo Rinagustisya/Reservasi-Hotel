@@ -36,7 +36,6 @@
         <div class="form-group row">
           <div class="card col-6">
             <div class="card-body">
-              <div class="row">
               <!-- input 1 -->
                 <label>Check In</label>
                   <div class="form-group">
@@ -46,7 +45,6 @@
                   @endif
                   </div>
               <!-- end input -->
-            </div>
           </div>
         </div>
         <!-- input 2 -->

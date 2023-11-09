@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Pesan;
 class MonitoringController extends Controller
@@ -50,9 +50,9 @@ class MonitoringController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pesan $pesan)
     {
-        //
+        return view('kamar.showData', ['row'=>$pesan]);
     }
 
     /**

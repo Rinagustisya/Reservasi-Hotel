@@ -1,4 +1,4 @@
-@extends('layouts.admin',['title'=>'Kamar'])
+@extends('layouts.admin',['title'=>'Monitoring'])
 
 @section('content-header')
 <h1 class="m-0"><i class="fas fa-desktop"></i>Monitoring</h1>
@@ -20,6 +20,8 @@
                     <th>Check Out</th>
                     <th>Jenis Kamar</th>
                     <th>Jumlah Kamar</th>
+                    <th>Aksi</th>
+                    <th>Status</th>
                     <!-- <th>Deskripsi Kamar</th>  -->
                 </tr>
             </thead>
@@ -33,10 +35,9 @@
                     <td>{{ $row->check_out }}</td>
                     <td>{{ $row->jenis_kamar }}</td>
                     <td>{{ $row->jumlah_kamar }}</td>
-                    <!-- <td>
-                        <x-btn-edit :link="route('kamar.edit',['kamar'=>$row->id])" />
-                        <x-btn-delete :link="route('kamar.destroy',['kamar'=>$row->id])" />
-                    </td> -->
+                    <td>
+                        <x-btn-show :link="route('moni.showData',['pesan'=>$row->id])" />
+                    </td>
                     <!-- <td>{{ $row->deskripsi_kamar }}</td> -->
                 </tr>
                 @endforeach

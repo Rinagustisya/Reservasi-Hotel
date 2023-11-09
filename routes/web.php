@@ -33,12 +33,13 @@ Route::group([
 
         Route::group(['middleware' =>['can:role,"resepsionis"']], function(){
             Route::get('/moni', 'MonitoringController@index')->name('moni');
+            Route::get('/moni/showData', 'MonitoringController@show')->name('moni.showData');
+            Route::put('/moni/update', 'MonitoringController@update')->name('moni.update');
         });
         
         Route::group(['middleware' =>['can:role,"admin"']], function(){
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
-        Route::resource('pesan', 'MonitoringController');
         });
     });
 });

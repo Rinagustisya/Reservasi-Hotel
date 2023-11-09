@@ -14,7 +14,10 @@
 
         <!-- link icon -->
         <x-nav-item label="Dashboard" icon="fas fa-tachometer-alt" :link="route('dashboard')"/>
+        @can('role','resepsionis')
         <x-nav-item label="Monitoring" icon="fas fa-desktop" :link="route('moni')"/>
+        @endcan
+
         @can('role','admin')
         <x-nav-item label="Kamar" icon="fas fa-bed" :link="route('kamar.index')"/>
         <x-nav-item label="User Admin" icon="fas fa-users" :link="route('admin.index')"/>
