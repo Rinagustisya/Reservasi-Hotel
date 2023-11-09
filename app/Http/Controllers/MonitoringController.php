@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Pesan;
+use Illuminate\Support\Facades\Storage;
 class MonitoringController extends Controller
 {
     /**
@@ -50,11 +51,27 @@ class MonitoringController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pesan $pesan)
+    public function show(Request $request)
     {
+        
+        $queryId = $request->query('pesan');
+        $pesan = Pesan::find($queryId);
         return view('kamar.showData', ['row'=>$pesan]);
     }
 
+
+    public function show1($filename)
+    {
+        $path = 'public/data_diri/' . $filename;
+        $filePath = storage_path('app/' . $path);
+
+        if (Storage::exists($path)) {
+            $fileContents = file_get_contents($filePath);
+            return response($fileContents)->header('Content-Type', 'image/jpeg');
+        }
+
+        abort(404);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -88,4 +105,5 @@ class MonitoringController extends Controller
     {
         //
     }
+
 }

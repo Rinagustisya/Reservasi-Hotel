@@ -35,6 +35,7 @@ Route::group([
             Route::get('/moni', 'MonitoringController@index')->name('moni');
             Route::get('/moni/showData', 'MonitoringController@show')->name('moni.showData');
             Route::put('/moni/update', 'MonitoringController@update')->name('moni.update');
+            Route::get('/show-image/{filename}', 'MonitoringController@show1')->name('show.image');
         });
         
         Route::group(['middleware' =>['can:role,"admin"']], function(){
@@ -44,6 +45,7 @@ Route::group([
     });
 });
 // end login sesuai role
+
 Route::view('kamar', 'kamar')->name('kamar');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
 Route::post('tambah', 'PesanController@create')->name('pesan.create');
