@@ -21,7 +21,6 @@
                     <th>Jenis Kamar</th>
                     <th>Jumlah Kamar</th>
                     <th>Aksi</th>
-                    <th>Status</th>
                     <!-- <th>Deskripsi Kamar</th>  -->
                 </tr>
             </thead>
