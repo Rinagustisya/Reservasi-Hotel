@@ -75,12 +75,19 @@
         <!-- end input -->
         
         <!-- footer -->
+      </div class="col-12">
+        <div class="row">
+            <div class="col-6">
+            <a href="{{ route('home')}}"><button type="button" class="btn btn-light btn-block">Kembali</button></a>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-success  btn-block">Konfirmasi Pesanan</button>
+            </div>
       </div>
-        <button type="submit" class="btn btn-success">Konfirmasi Pesanan</button>
       </div>
             
-</div>
-      </div>
+        </div>
+        </div>
         </div>
     </div>
     </form>

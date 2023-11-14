@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="col-md-1">
-          <a href="{{ route('pesan' )}}"><button type="button" class="btn btn-block btn-info">Pesan</button> </a>
+          <a href="{{ route('pesan')}}"><button type="button" class="btn btn-block btn-info">Pesan</button> </a>
         </div>
     </form>
  
