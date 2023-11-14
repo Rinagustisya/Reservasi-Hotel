@@ -47,6 +47,7 @@ Route::group([
 // end login sesuai role
 
 Route::view('kamar', 'kamar')->name('kamar');
+Route::view('pesan', 'pesan')->name('pesan');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
 Route::post('tambah', 'PesanController@create')->name('pesan.create');
 
