@@ -10,7 +10,10 @@ class Pesan extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama_user',
+        'nama_tamu',
+        'nama_pemesan',
+        'email',
+        'no_hp',
         'check_in',
         'check_out',
         'jenis_kamar',

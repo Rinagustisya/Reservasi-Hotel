@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('pesans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_user');
+            $table->string('nama_tamu');
+            $table->string('nama_pemesan'); 
+            $table->string('email');
+            $table->string('no_hp');
             $table->string('check_in');
             $table->string('check_out');
             $table->string('jenis_kamar');
