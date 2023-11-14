@@ -1,24 +1,54 @@
-@extends('layouts.tamu', ['title'=>'Home'])
+@extends('layouts.tamu', ['title'=>'Pesan'])
 
 @section('content')
 <x-status/>
-<x-form-pesan />
+<form method="post" action="{{ route('pesan.store') }}" class="row bg-white py-4 px-2 form-pesan border shadow" enctype="multipart/form-data">
+        <div class="col-md">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-white border-0">Check In</span>
+                </div>
+                <input type="date" class="form-control rounded" placeholder="Check In" name="check_in">
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-white border-0">Check Out</span>
+                </div>
+                <input type="date" class="form-control rounded" placeholder="Check Out" name="check_out">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-white border-0">Jumlah Kamar</span>
+                </div>
+                <input type="text" class="form-control rounded" maxlength="3" name="jum_kamar">
+            </div>
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-block btn-info">Pesan</button>
+        </div>
+    </form>
 <br>
-<form method="post" action="{{ route('pesan.create') }}" enctype="multipart/form-data">
+<form method="post" action="{{ route('pesan.store') }}" enctype="multipart/form-data">
     <div class="container d-flex justify-content-center">
         <div class="card col-8">
             <div class="card-body">
         <h3>
             <i class="fas fa-pen"></i></fa-pen-to-square> Form Pemesanan
         </h3>
+        
         <div class="form-group">
           <div class="card col-12">
             <div class="card-body">
+                
               <label>Nama Pemesan</label>
                   <div class="form-group">
-                  <input type="text" class="form-control" id="nama_user" name="nama_user" placeholder="Masukan nama pesan..." />
-                  @if ($errors->has('nama_user'))
-                  <span class="text-danger text-left">{{ $errors->first('nama_user') }}</span>
+                  <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan" placeholder="Masukan nama pesan..." />
+                  @if ($errors->has('nama_pemesan'))
+                  <span class="text-danger text-left">{{ $errors->first('nama_pemesan') }}</span>
                   @endif
                   </div>
                   <!-- input2 -->

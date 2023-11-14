@@ -50,4 +50,6 @@ Route::view('kamar', 'kamar')->name('kamar');
 Route::view('pesan', 'pesan')->name('pesan');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');
 Route::post('tambah', 'PesanController@create')->name('pesan.create');
+Route::post('add', 'PesanController@store')->name('pesan.store');
+Route::post('tambah', 'PesanController@storeAtas')->name('pesan.store1');
 

@@ -25,8 +25,22 @@ class PesanController extends Controller
      */
     public function create(Request $request)
     {
+        
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $request->validate([
-            'nama_user' => 'required|min:3',
+            'nama_tamu' => 'required|min:3',
+            'nama_pemesan' => 'required|min:3',
+            'email' => 'required',
+            'no_hp' => 'required|min:4',
             'check_in' => 'required',
             'check_out' => 'required',
             'jenis_kamar' => 'required',
@@ -39,7 +53,10 @@ class PesanController extends Controller
        $image->storeAs('public/data_diri', $image->hashName());
 
         Pesan::create([
-            'nama_user' => $request->nama_user,
+            'nama_tamu' => $request->nama_tamu,
+            'nama_pemesan' => $request->nama_pemesan,
+            'email' => $request->email,
+            'no_hp' => $request->no_hp,
             'check_in' => $request->check_in,
             'check_out' => $request->check_out,
             'jenis_kamar' => $request->jenis_kamar,
@@ -51,15 +68,20 @@ class PesanController extends Controller
         return redirect()->route('home');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function storeAtas(Request $request)
     {
-        //
+        $request->validate([
+            'check_in' => 'required',
+            'check_out' => 'required',
+            'jumlah_kamar' => 'required'
+        ]);
+
+        Pesan::create([
+            'check_in' => $request->check_in,
+            'check_out' => $request->check_out,
+            'jumlah_kamar' => $request->jumlah_kamar
+        ]);
+        return redirect()->route('pesan');
     }
 
     /**
