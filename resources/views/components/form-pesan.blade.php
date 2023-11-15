@@ -44,7 +44,7 @@
                 <input type="hidden" name="check_in" id="check_in_hidden">
                 <input type="hidden" name="check_out" id="check_out_hidden">
                 <input type="hidden" name="jumlah_kamar" id="jumlah_kamar_hidden">
-                <input type="hidden" name="jenis_kamar_input" id="jenis_kamar_input">
+                <input type="hidden" name="jenis_kamar" id="jenis_kamar_input">
                  <!-- end -->
 
               <label>Nama Pemesan</label>
@@ -143,12 +143,12 @@
 
 
                 // Tamu hanya bisa memesan tipe kamar yang sama saat melakukan pemesanan lebih dari 1 kamar dalam 1 kali pemesanan
-                $('#your-form-id').submit(function (event) {
+                $('#form1').submit(function (event) {
                     // Get the selected room type from the dropdown
                     var selectedRoomType = $('#jenis_kamar').val();
 
                     // Get the user-entered room type from the input
-                    var enteredRoomType = $('input[name="jenis_kamar_input"]').val();
+                    var enteredRoomType = $('input[name="jenis_kamar"]').val();
 
                     // Check if there are multiple selected rooms and room types match
                     if (selectedRoomType && enteredRoomType && $('input[name="jumlah_kamar"]').val() > 1) {
