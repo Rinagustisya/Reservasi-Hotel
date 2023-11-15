@@ -20,21 +20,18 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text bg-white border-0">Jumlah Kamar</span>
                 </div>
-                <input type="text" class="form-control rounded" maxlength="3" name="jum_kamar">
+                <input type="number" class="form-control rounded" maxlength="3" name="jumlah_kamar">
             </div>
         </div>
         <div class="col-md-1">
-          <button type="button" onclick="showForm()" class="btn btn-block btn-info">Pesan</button>
+          <button type="button" class="btn btn-block btn-info" id="bt-form">Pesan</button>
         </div>
     </form>
 
 
     <!-- form 2 -->
-    <div id="form_container">
-  <div id="form_sub_container1" style="display: block;">
-   <form method="post" action="{{ route('pesan.store') }}" enctype="multipart/form-data" >
-    <div class="container d-flex justify-content-center">
-        <div class="card col-8">
+   <form method="post" action="{{ route('pesan.store') }}" enctype="multipart/form-data" id="form1" style="display: none;">
+        <div class="card col-12">
             <div class="card-body">
         <h3>
             <i class="fas fa-pen"></i></fa-pen-to-square> Form Pemesanan
@@ -43,7 +40,12 @@
         <div class="form-group">
           <div class="card col-12">
             <div class="card-body">
-                
+                <!-- hidden -->
+                <input type="hidden" name="check_in_hidden" id="check_in_hidden">
+                <input type="hidden" name="check_out_hidden" id="check_out_hidden">
+                <input type="hidden" name="jumlah_kamar_hidden" id="jumlah_kamar_hidden">
+                 <!-- end -->
+
               <label>Nama Pemesan</label>
                   <div class="form-group">
                   <input type="text" class="form-control" id="nama_pemesan" name="nama_pemesan" placeholder="Masukan nama pesan..." />
@@ -105,31 +107,49 @@
         <!-- end input -->
         
         <!-- footer -->
-      </div class="col-12">
-        <div class="row">
-            <div class="col-6">
-            <a href="{{ route('home')}}"><button type="button" class="btn btn-light btn-block">Kembali</button></a>
-            </div>
-            <div class="col-6">
-                <button type="submit" class="btn btn-success  btn-block">Konfirmasi Pesanan</button>
-            </div>
-      </div>
-      </div>
-            
+        <button type="submit" class="btn btn-success btn-block">Konfirmasi Pesanan</button>
         </div>
         </div>
         </div>
-    </div>
+        </div>
+        </div>
     </form>
-</div>
-</div>
-
 
     @push('js1')
-   <script>
-    function showForm() {
-      var form = document.getElementById('myForm');
-      form.style.display = 'block';
-    }
-   </script>
-   @endpush 
+        <!-- show form -->
+        <script>
+            $(document).ready(function () {
+                $("#bt-form").click(function(){
+                    $("#form1").toggle();
+                    // document.getElementById("#form1").style.display="block";
+                });
+
+                // Fungsi untuk menyalin nilai dari input date ke input hidden
+                // $('input[type="date"]').change(function() {
+                //     var dateValue = $(this).val();
+                //     $('#check_in_hidden').val(dateValue);
+                //     $('#check_out_hidden').val(dateValue);
+                // });
+
+                // $('input[type="number"]').change(function() {
+                //     var jumlah = $(this).val();
+                //     $('#jumlah_kamar_hidden').val(jumlah);
+                // });
+
+                $('input[type="date"]').change(function() {
+                var dateValue = $(this).val();
+                if ($(this).attr('name') === 'check_in') {
+                    $('#check_in_hidden').val(dateValue);
+                } else if ($(this).attr('name') === 'check_out') {
+                    $('#check_out_hidden').val(dateValue);
+                }
+            });
+
+            // jQuery script to copy number value to hidden input
+                $('input[type="number"]').change(function() {
+                    var jumlah = $(this).val();
+                    $('#jumlah_kamar_hidden').val(jumlah);
+                });
+            });
+        </script>
+    @endpush

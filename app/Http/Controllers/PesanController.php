@@ -68,22 +68,6 @@ class PesanController extends Controller
         return redirect()->route('home');
     }
 
-    public function storeAtas(Request $request)
-    {
-        $request->validate([
-            'check_in' => 'required',
-            'check_out' => 'required',
-            'jumlah_kamar' => 'required'
-        ]);
-
-        Pesan::create([
-            'check_in' => $request->check_in,
-            'check_out' => $request->check_out,
-            'jumlah_kamar' => $request->jumlah_kamar
-        ]);
-        return redirect()->route('pesan');
-    }
-
     /**
      * Display the specified resource.
      *
