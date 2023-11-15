@@ -41,9 +41,9 @@
           <div class="card col-12">
             <div class="card-body">
                 <!-- hidden -->
-                <input type="hidden" name="check_in_hidden" id="check_in_hidden">
-                <input type="hidden" name="check_out_hidden" id="check_out_hidden">
-                <input type="hidden" name="jumlah_kamar_hidden" id="jumlah_kamar_hidden">
+                <input type="hidden" name="check_in" id="check_in_hidden">
+                <input type="hidden" name="check_out" id="check_out_hidden">
+                <input type="hidden" name="jumlah_kamar" id="jumlah_kamar_hidden">
                  <!-- end -->
 
               <label>Nama Pemesan</label>
@@ -125,69 +125,21 @@
                 });
 
                 // Fungsi untuk menyalin nilai dari input date ke input hidden
-                // $('input[type="date"]').change(function() {
-                //     var dateValue = $(this).val();
-                //     $('#check_in_hidden').val(dateValue);
-                //     $('#check_out_hidden').val(dateValue);
-                // });
-
-                // $('input[type="number"]').change(function() {
-                //     var jumlah = $(this).val();
-                //     $('#jumlah_kamar_hidden').val(jumlah);
-                // });
-
-            //     $('input[type="date"]').change(function() {
-            //     var dateValue = $(this).val();
-            //     if ($(this).attr('name') === 'check_in') {
-            //         $('#check_in_hidden').val(dateValue);
-            //     } else if ($(this).attr('name') === 'check_out') {
-            //         $('#check_out_hidden').val(dateValue);
-            //     }
-            // });
-
-            // // jQuery script to copy number value to hidden input
-            //     $('input[type="number"]').change(function() {
-            //         var jumlah = $(this).val();
-            //         $('#jumlah_kamar_hidden').val(jumlah);
-            //     });
-
-        //     $('input[type="date"]').change(function() {
-        //     console.log('Date input changed');
-        //     var dateValue = $(this).val();
-        //     console.log('Date value:', dateValue);
-        //     if ($(this).attr('name') === 'check_in') {
-        //         console.log('Setting check_in_hidden value:', dateValue);
-        //         $('#check_in_hidden').val(dateValue);
-        //     } else if ($(this).attr('name') === 'check_out') {
-        //         console.log('Setting check_out_hidden value:', dateValue);
-        //         $('#check_out_hidden').val(dateValue);
-        //     }
-        // });
-
-        // $('input[type="number"]').change(function() {
-        //     console.log('Number input changed');
-        //     var jumlah = $(this).val();
-        //     console.log('Number value:', jumlah);
-        //     $('#jumlah_kamar_hidden').val(jumlah);
-        // });
-
-            });
-
-            $(document).on('change', 'input[type="date"]', function() {
-                // Your date change handling code
+                $('input[name="check_in"], input[name="check_out"]').change(function() {
                 var dateValue = $(this).val();
                 if ($(this).attr('name') === 'check_in') {
                     $('#check_in_hidden').val(dateValue);
                 } else if ($(this).attr('name') === 'check_out') {
                     $('#check_out_hidden').val(dateValue);
                 }
-            });
+                });
 
-            $(document).on('change', 'input[type="number"]', function() {
-                // Your number change handling code
-                var jumlah = $(this).val();
-                $('#jumlah_kamar_hidden').val(jumlah);
-            });
+            // jQuery script to copy number value to hidden input
+                $('input[name="jumlah_kamar"]').change(function() {
+                    var jumlah = $(this).val();
+                    $('#jumlah_kamar_hidden').val(jumlah);
+                });
 
+            });
         </script>
     @endpush
