@@ -1,7 +1,7 @@
 @extends('layouts.admin',['title'=>'Kamar'])
 
 @section('content-header')
-<h1 class="m-0"><i class="fas fa-bed"></i>Fasilitas</h1>
+<h1 class="m-0"><i class="fas fa-bed"></i>Fasilitas Kamar</h1>
 @endsection
 
 @section('content')
@@ -18,10 +18,9 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama Kamar</th>
-                    <th>Harga Kamar</th>
-                    <th>Jumlah Kamar</th> 
-                    <!-- <th>Deskripsi Kamar</th>  -->
+                    <th>Nama Failitas</th>
+                    <th>Gambar</th>
+                    <th>Aksi</th> 
                 </tr>
             </thead>
             <tbody>
@@ -29,12 +28,11 @@
                 @foreach ( $data as $row ) 
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ ucwords($row->nama_kamar) }}</td>
-                    <td>Rp. {{ number_format($row->harga_kamar,2,',','.') }}</td>
-                    <td>{{ $row->jum_kamar }}</td>
+                    <td>{{ $row->nama_kamar }}</td>
+                    <td>{{ $row->harga_kamar }}</td>
                     <td>
-                        <x-btn-edit :link="route('kamar.edit',['kamar'=>$row->id])" />
-                        <x-btn-delete :link="route('kamar.destroy',['kamar'=>$row->id])" />
+                        <x-btn-edit :link="route('fasilitas.edit',['fasilitas'=>$row->id])" />
+                        <x-btn-delete :link="route('fasilitas.destroy',['fasilitas'=>$row->id])" />
                     </td>
                     <!-- <td>{{ $row->deskripsi_kamar }}</td> -->
                 </tr>

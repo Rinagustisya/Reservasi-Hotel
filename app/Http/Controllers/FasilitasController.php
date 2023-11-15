@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Fasilitas;
 
 class FasilitasController extends Controller
 {
@@ -11,9 +12,16 @@ class FasilitasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $search = $request->search;
+        $data = Fasilitas::select('id', 'label', 'foto')
+                ->when($search, function($query, $search){
+                    return $query->where('id', 'like', "%{$search}%")
+                            ->orWhere('label', 'like', "%{$search}%");
+                })
+                ->paginate(5);
+        return view('fasilitas_kamar.index', ['data'=>$data]);
     }
 
     /**
