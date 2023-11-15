@@ -9,6 +9,7 @@ class Fasilitas extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
     protected $fillable = [
         'label',
         'foto'
