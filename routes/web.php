@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CetakBuktiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,7 +48,7 @@ Route::group([
     });
 });
 // end login sesuai role
-
+Route::get('/print', 'CetakBuktiController@print')->name('cetak.bukti');
 Route::view('kamar', 'kamar')->name('kamar');
 Route::view('pesan', 'pesan')->name('pesan');
 Route::view('fasilitas', 'fasilitas')->name('fasilitas');

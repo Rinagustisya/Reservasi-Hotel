@@ -12,6 +12,7 @@
             <x-nav-item-tamu label="Home" :link="route('home')"/>
             <x-nav-item-tamu label="Kamar" :link="route('kamar')"/>
             <x-nav-item-tamu label="Fasilitas" :link="route('fasilitas')"/>
+            <x-nav-item-tamu label="Cetak Reservasi" :link="route('cetak.bukti')"/>
         </ul>
         </div>
     </div>
