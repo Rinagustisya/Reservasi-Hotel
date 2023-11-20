@@ -16,8 +16,8 @@
             <div class="card-body">
               <label>Nama</label>
                   <div class="form-group">
-                  <input type="text" class="form-control" id="nama_user" name="nama_user" placeholder="Masukan nama anda..."  value="{{ $row->nama_user }}" readonly/>
-                  @if ($errors->has('nama_user'))
+                  <input type="text" class="form-control" id="nama_user" name="nama_user" placeholder="Masukan nama anda..."  value="{{ $row->nama_pemesan }}" readonly/>
+                  @if ($errors->has('nama_pemesan'))
                   <span class="text-danger text-left">{{ $errors->first('nama_user') }}</span>
                   @endif
                   </div>

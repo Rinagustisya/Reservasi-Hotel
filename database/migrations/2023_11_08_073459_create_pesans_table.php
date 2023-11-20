@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('jenis_kamar');
             $table->string('foto_user');
             $table->integer('jumlah_kamar');
+            $table->string('status')->default('Check In');
             $table->timestamps();
         });
     }

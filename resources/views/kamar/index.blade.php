@@ -18,9 +18,11 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama Kamar</th>
+                    <th>Tipe Kamar</th>
                     <th>Harga Kamar</th>
                     <th>Jumlah Kamar</th> 
+                    <th>Status</th> 
+                    <th>Aksi</th> 
                     <!-- <th>Deskripsi Kamar</th>  -->
                 </tr>
             </thead>
@@ -31,6 +33,7 @@
                     <td>{{ $no++ }}</td>
                     <td>{{ ucwords($row->nama_kamar) }}</td>
                     <td>Rp. {{ number_format($row->harga_kamar,2,',','.') }}</td>
+                    <td>{{ $row->status }}</td>
                     <td>{{ $row->jum_kamar }}</td>
                     <td>
                         <x-btn-edit :link="route('kamar.edit',['kamar'=>$row->id])" />

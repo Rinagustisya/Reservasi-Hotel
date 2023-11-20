@@ -15,10 +15,10 @@ class MonitoringController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $data = Pesan::select('id', 'nama_user', 'check_in',  'check_out', 'jenis_kamar', 'foto_user' , 'jumlah_kamar')
+        $data = Pesan::select('id', 'nama_tamu', 'nama_pemesan', 'check_in',  'check_out', 'jenis_kamar', 'foto_user' , 'jumlah_kamar', 'status')
                 ->when($search, function($query, $search){
-                    return $query->where('jenis_kamar', 'like', "%{$search}%")
-                            ->orWhere('check_in', 'like', "%{$search}%");
+                    return $query->where('nama_tamu', 'like', "%{$search}%")
+                            ->orWhere('status', 'like', "%{$search}%");
                 })
                 ->paginate(5);
         return view('kamar.moni', ['data'=>$data]);
@@ -53,7 +53,6 @@ class MonitoringController extends Controller
      */
     public function show(Request $request)
     {
-        
         $queryId = $request->query('pesan');
         $pesan = Pesan::find($queryId);
         return view('kamar.showData', ['row'=>$pesan]);

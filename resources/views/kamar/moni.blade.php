@@ -15,11 +15,10 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama</th>
+                    <th>Nama Tamu</th>
                     <th>Check in</th>
                     <th>Check Out</th>
-                    <th>Jenis Kamar</th>
-                    <th>Jumlah Kamar</th>
+                    <th>Status</th>
                     <th>Aksi</th>
                     <!-- <th>Deskripsi Kamar</th>  -->
                 </tr>
@@ -29,11 +28,10 @@
                 @foreach ( $data as $row ) 
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $row->nama_user }}</td>
+                    <td>{{ $row->nama_tamu }}</td>
                     <td>{{ $row->check_in }}</td>
                     <td>{{ $row->check_out }}</td>
-                    <td>{{ $row->jenis_kamar }}</td>
-                    <td>{{ $row->jumlah_kamar }}</td>
+                    <td>{{ $row->status }}</td>
                     <td>
                         <x-btn-show :link="route('moni.showData',['pesan'=>$row->id])" />
                     </td>

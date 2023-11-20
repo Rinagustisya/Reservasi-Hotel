@@ -45,6 +45,7 @@
                 <input type="hidden" name="check_out" id="check_out_hidden">
                 <input type="hidden" name="jumlah_kamar" id="jumlah_kamar_hidden">
                 <input type="hidden" name="jenis_kamar" id="jenis_kamar_input">
+                <input type="hidden" name="status" value="Check In" />
                  <!-- end -->
 
               <label>Nama Pemesan</label>

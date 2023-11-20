@@ -36,6 +36,10 @@ class PesanController extends Controller
      */
     public function store(Request $request)
     {
+        // set default value from status
+        $request->merge(['status' =>
+        $request->get('status', 'Check In')]);
+        
         $request->validate([
             'nama_tamu' => 'required|min:3',
             'nama_pemesan' => 'required|min:3',
@@ -45,6 +49,7 @@ class PesanController extends Controller
             'check_out' => 'required',
             'jenis_kamar' => 'required',
             'foto_user' => 'required|image|mimes:png,jpg,jpeg',
+            'status' => 'required',
             'jumlah_kamar' => 'required'
         ]);
 

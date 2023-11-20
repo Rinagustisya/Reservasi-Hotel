@@ -42,7 +42,6 @@ Route::group([
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
         Route::resource('fasilitas', 'FasilitasController');
-        Route::get('/show-image/{filename}', 'FasilitasController@show1')->name('show.imagefasi');
         Route::get('admin/fasilitas/{fasilita}/edit', 'FasilitasController@edit')->name('fasilitas.edit');
         });
     });
