@@ -15,15 +15,20 @@ class CetakBuktiController extends Controller
      */
     public function print(Request $request)
     {
-        $data = Pesan::select('id', 'nama_tamu', 'nama_pemesan', 'check_in',  'check_out', 'jenis_kamar', 'foto_user' , 'jumlah_kamar', 'status')->get();
+        $data = Pesan::orderBy('id', 'desc')->get();
+        $firstData = $data->first();
+
+        if (empty($firstData)) {
+            return response()->json(['error' => 'No reservations found.'], 404);
+        }
+    
         $invoiceData = [
             'invoice_id' =>  $data->first()->id,
             'transaction_id' => uniqid(),
             'payment_method' => 'BCA M-Banking',
             'creation_date' => date('M d, Y'),
         ];
-        $pdf = PDF::loadView('cetak', compact('data','invoiceData'))
-                ->setOption('fontDir', public_path('/fonts'));
+        $pdf = PDF::loadView('cetak', compact('data','invoiceData', 'firstData'));
         return $pdf->download('cetak.pdf');
     }
 

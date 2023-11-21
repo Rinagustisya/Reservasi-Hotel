@@ -118,10 +118,10 @@
                         <table>
                             <tr>
                                 <td>
-                                    {{ $data->first()->nama_pemesan }}<br />
+                                    {{ $firstData->nama_pemesan }}<br />
                                 </td>
                                 <td>
-                                {{  $data->first()->nama_tamu  }}<br />
+                                {{  $firstData->nama_tamu  }}<br />
                                 </td>
                             </tr>
                         </table>
@@ -142,9 +142,9 @@
                 </tr>
                 @foreach($data as $item)
                     <tr class="item @if($loop->last) last @endif">
-                        <td>{{ $data->first()->jenis_kamar }}</td>
-                        <td>${{ $data->first()->jumlah_kamar }}</td>
-                        <td>${{ $data->first()->check_out }}</td>
+                        <td>{{ $item->jenis_kamar }}</td>
+                        <td>${{ $item->jumlah_kamar }}</td>
+                        <td>${{ $item->check_out }}</td>
                     </tr>
                 @endforeach
             </table>
