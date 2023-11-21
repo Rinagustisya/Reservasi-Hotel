@@ -28,9 +28,14 @@
                 @foreach ( $data as $row ) 
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $row->label}}</td>
+                    <td>{{ $row->nama}}</td>
                     <td>{{ $row->keterangan}}</td>
-                    
+                    <td>
+                    @if ($row)
+                        <x-btn-edit :link="route('fas.showData',['fas'=>$row->id])" />
+                    @endif
+                        <x-btn-delete :link="route('fas.hapus',['fasilitas'=>$row->id])" />
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

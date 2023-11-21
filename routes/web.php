@@ -43,7 +43,10 @@ Route::group([
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
         Route::resource('fasilitas', 'FasilitasController');
-        Route::get('admin/fasilitas/{fasilita}/edit', 'FasilitasController@edit')->name('fasilitas.edit');
+        Route::get('/fas/hapus', 'FasilitasController@destroy')->name('fas.hapus');
+        Route::get('/fas/update', 'FasilitasController@update')->name('fas.update');
+        Route::get('/fas/showdata', 'FasilitasController@showData')->name('fas.showData');
+        Route::get('/show-foto/{filename1}', 'FasilitasController@show1')->name('show.foto');
         });
     });
 });

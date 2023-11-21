@@ -8,7 +8,8 @@
 <div class="row">
     <div class="col-12">
            <x-form-create :action="route('fasilitas.store')" :upload="true">
-               <x-input-admin label="Nama Fasilitas" name="label" />
+               <x-input-admin label="Nama Fasilitas" name="nama" />
+               <x-input-admin label="Keterangan" name="keterangan" />
                <div class="akucinta">
                <x-input-admin label="Foto" name="foto" type="file" keterangan="Foto bertipe : png, jpg, jpeg"/>   
                 </div> 

@@ -20,7 +20,7 @@
 
         @can('role','admin')
         <x-nav-item label="Fasilitas Kamar" icon="fas fa-building" :link="route('fasilitas.index')"/>
-        <x-nav-item label="Fasilitas Umum" icon="far fa-building" :link="route('fasilitas.index')"/>
+        <x-nav-item label="Fasilitas Umum" icon="far fa-building" :link="route('kamar.index')"/>
         <x-nav-item label="Kamar" icon="fas fa-bed" :link="route('kamar.index')"/>
         <x-nav-item label="User Admin" icon="fas fa-users" :link="route('admin.index')"/>
         @endcan

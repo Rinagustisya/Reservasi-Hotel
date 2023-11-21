@@ -16,9 +16,9 @@ class FasilitasController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
-        $data = Fasilitas::select('id', 'label', 'foto')
+        $data = Fasilitas::select('id', 'nama', 'keterangan', 'foto')
                 ->when($search, function($query, $search){
-                    return $query->where('label', 'like', "%{$search}%");
+                    return $query->where('nama', 'like', "%{$search}%");
                 })
                 ->paginate(5);
         return view('fasilitas_kamar.index', ['data'=>$data]);
@@ -43,7 +43,8 @@ class FasilitasController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'label' => 'required|min:3',
+            'nama' => 'required',
+            'keterangan' => 'required',
             'foto' => 'required|image|mimes:png,jpg,jpeg'
         ]);
 
@@ -52,7 +53,8 @@ class FasilitasController extends Controller
        $image->storeAs('public/fasilitas', $image->hashName());
 
         Fasilitas::create([
-            'label' => $request->label,
+            'nama' => $request->nama,
+            'keterangan' => $request->keterangan,
             'foto' => $image->hashName()
         ]);
 
@@ -88,9 +90,16 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fasilitas $fasilita)
+    public function showData(Request $request)
     {
-        return view('fasilitas.edit', ['row'=>$fasilita]);
+        $queryId = $request->query('fasilitas');
+        $fas= Fasilitas::find($queryId);
+
+        if (!$fas) {
+            return abort(404);
+        }
+    
+        return view('fasilitas_kamar.edit', ['row'=>$fas]);
     }
 
     /**
@@ -113,6 +122,25 @@ class FasilitasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fasilitas = Fasilitas::find($id);
+
+    // Pastikan fasilitas ditemukan
+    if (!$fasilitas) {
+        return back()->with('error', 'Fasilitas tidak ditemukan');
+    }
+    // Hapus foto jika ada
+    if ($fasilitas->foto) {
+        $file = 'public/fasilitas/' . $fasilitas->foto;
+        
+        // Periksa apakah file ada di storage
+        if (Storage::exists($file)) {
+            Storage::delete($file);
+        }
+    }
+
+    // Hapus fasilitas dari database
+    $fasilitas->delete();
+
+    return back()->with('status', 'destroy');
     }
 }
