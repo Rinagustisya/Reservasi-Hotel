@@ -18,7 +18,8 @@
             <thead>
                 <tr>
                     <th>No.</th>
-                    <th>Nama Failitas</th>
+                    <th>Nama Fasilitas</th>
+                    <th>Keterangan</th>
                     <th>Aksi</th> 
                 </tr>
             </thead>
@@ -28,8 +29,8 @@
                 <tr>
                     <td>{{ $no++ }}</td>
                     <td>{{ $row->label}}</td>
-                    <td>{{ $row->foto}}</td>
-                    <!-- <td>{{ $row->deskripsi_kamar }}</td> -->
+                    <td>{{ $row->keterangan}}</td>
+                    
                 </tr>
                 @endforeach
             </tbody>

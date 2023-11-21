@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->id();
-            $table->string('label');
+            $table->string('nama');
+            $table->string('keterangan');
             $table->string('foto');
             $table->timestamps();
         });

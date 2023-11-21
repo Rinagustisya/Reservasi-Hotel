@@ -11,7 +11,8 @@ class Fasilitas extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'label',
+        'nama',
+        'keterangan',
         'foto'
     ];
 }
