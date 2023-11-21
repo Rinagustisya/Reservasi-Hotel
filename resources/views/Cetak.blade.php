@@ -1,6 +1,101 @@
-@extends('layouts.tamu', ['title'=>'Cetak Bukti'])
-
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Reservasi</title>
+    <style>
+          
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Bold.ttf") }}) format("truetype");
+                font-weight: 700;
+                font-style: normal;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-BoldItalic.ttf") }}) format("truetype");
+                font-weight: 700;
+                font-style: italic;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-ExtraBold.ttf") }}) format("truetype");
+                font-weight: 800;
+                font-style: normal;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-ExtraBoldItalic.ttf") }}) format("truetype");
+                font-weight: 800;
+                font-style: italic;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Light.ttf") }}) format("truetype");
+                font-weight: 300;
+                font-style: normal;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-LightItalic.ttf") }}) format("truetype");
+                font-weight: 300;
+                font-style: italic;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Medium.ttf") }}) format("truetype");
+                font-weight: 500;
+                font-style: normal;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-MediumItalic.ttf") }}) format("truetype");
+                font-weight: 500;
+                font-style: italic;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Regular.ttf") }}) format("truetype");
+                font-weight: 400;
+                font-style: normal;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-SemiBold.ttf") }}) format("truetype");
+                font-weight: 600;
+                font-style: normal;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-SemiBoldItalic.ttf") }}) format("truetype");
+                font-weight: 600;
+                font-style: italic;
+            }
+    
+            @font-face {
+                font-family: 'Open Sans';
+                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Italic.ttf") }}) format("truetype");
+                font-weight: 400;
+                font-style: italic;
+            }
+    
+            body {
+                font-family: 'Open Sans', sans-serif;
+            }
+</style>
+</head>
+<body>
 <div class="invoice-box">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
@@ -54,4 +149,5 @@
                 @endforeach
             </table>
         </div>
-@endsection
+</body>
+</html>

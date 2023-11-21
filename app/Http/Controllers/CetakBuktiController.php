@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use App\Models\Pesan;
 use RealRashid\SweetAlert\Facades\Alert;
 class CetakBuktiController extends Controller
@@ -15,15 +15,6 @@ class CetakBuktiController extends Controller
      */
     public function print(Request $request)
     {
-        // Opsi DOMPDF
-     $dompdfOptions = [
-        'dpi' => 150,
-        'defaultFont' => 'arial',
-    ];
-
-    // Atur opsi DOMPDF
-    PDF::setOptions($dompdfOptions);
-
         $data = Pesan::select('id', 'nama_tamu', 'nama_pemesan', 'check_in',  'check_out', 'jenis_kamar', 'foto_user' , 'jumlah_kamar', 'status')->get();
         $invoiceData = [
             'invoice_id' =>  $data->first()->id,
@@ -31,7 +22,8 @@ class CetakBuktiController extends Controller
             'payment_method' => 'BCA M-Banking',
             'creation_date' => date('M d, Y'),
         ];
-        $pdf = PDF::loadView('cetak', compact('data','invoiceData'));
+        $pdf = PDF::loadView('cetak', compact('data','invoiceData'))
+                ->setOption('fontDir', public_path('/fonts'));
         return $pdf->download('cetak.pdf');
     }
 
