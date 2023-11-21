@@ -43,6 +43,7 @@ Route::group([
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
         Route::resource('fasilitas', 'FasilitasController');
+        Route::resource('faslitas_umum', 'FasUmumController');
         Route::get('/fas/hapus', 'FasilitasController@destroy')->name('fas.hapus');
         Route::get('/fas/update', 'FasilitasController@update')->name('fas.update');
         Route::get('/fas/showdata', 'FasilitasController@showData')->name('fas.showData');
