@@ -8,56 +8,56 @@
           
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Bold.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-Bold.ttf") }}) format("truetype");
                 font-weight: 700;
                 font-style: normal;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-BoldItalic.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-BoldItalic.ttf") }}) format("truetype");
                 font-weight: 700;
                 font-style: italic;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-ExtraBold.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-ExtraBold.ttf") }}) format("truetype");
                 font-weight: 800;
                 font-style: normal;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-ExtraBoldItalic.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-ExtraBoldItalic.ttf") }}) format("truetype");
                 font-weight: 800;
                 font-style: italic;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Light.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-Light.ttf") }}) format("truetype");
                 font-weight: 300;
                 font-style: normal;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-LightItalic.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-LightItalic.ttf") }}) format("truetype");
                 font-weight: 300;
                 font-style: italic;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Medium.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-Medium.ttf") }}) format("truetype");
                 font-weight: 500;
                 font-style: normal;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-MediumItalic.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-MediumItalic.ttf") }}) format("truetype");
                 font-weight: 500;
                 font-style: italic;
             }
@@ -103,7 +103,7 @@
                         <table>
                             <tr>
                                 <td class="title">
-                                    <img src="{{ url('images/logobulat.PNG') }}" style="width: 100%; max-width: 88px" />
+                                    <img src="images/logobulat.PNG" style="width: 100%; max-width: 88px" />
                                 </td>
                                 <td>
                                     Invoice #: {{ $invoiceData['invoice_id'] }}<br />

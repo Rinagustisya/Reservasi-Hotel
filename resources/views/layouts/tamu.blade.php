@@ -24,7 +24,7 @@
 <!-- end navbar -->
 
 <div class="container-fluid p-0">
-    <img src="images/banner.jpg" class="img img-fluid w-100">
+    <img src="images/banner.png" class="img-fluid w-100">
 </div>
 
 <div class="container content">

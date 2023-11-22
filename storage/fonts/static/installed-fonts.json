@@ -3,6 +3,14 @@
         "normal": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_normal_0e292995f5c7594249f1be68ea134007",
         "600": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_600_94bd37ae8db4193a6fb233f400ad3519",
         "600_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_600_italic_dd7743024ba7335c599cc29c2d49ad00",
-        "italic": "open_sans_italic_c45479b5d609dde523c47de02efe180b"
+        "italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_italic_c45479b5d609dde523c47de02efe180b",
+        "bold": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_bold_8ba25ec3bdcca5931c775b6e949fc27f",
+        "bold_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_bold_italic_18aaa69d3fc317ac10a42201e3ef386f",
+        "800": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_800_2db221886663eb2c9fb35f76012d9c3a",
+        "800_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_800_italic_c5b3e76b866e6bf08364f355ce1a5b5a",
+        "300": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_300_9ebcc1c32503fce8fcd0836ea4378899",
+        "300_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_300_italic_b22bc788dfac3d85fcd07c219be5307e",
+        "500": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_500_fbf5cd2511eef8dad6a09a7ae1310660",
+        "500_italic": "open_sans_500_italic_3d12029813512ccb29e8f30e82633c4f"
     }
 }
