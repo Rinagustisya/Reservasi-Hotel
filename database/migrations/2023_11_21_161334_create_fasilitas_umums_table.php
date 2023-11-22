@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('fasilitas_umums', function (Blueprint $table) {
             $table->id();
+            $table->string('tipe_kamar');
+            $table->string('nama_fas');
             $table->timestamps();
         });
     }

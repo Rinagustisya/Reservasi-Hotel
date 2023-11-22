@@ -1,4 +1,4 @@
-@extends('layouts.admin',['title'=>'Kamar'])
+@extends('layouts.admin',['title'=>'Fas Kamar'])
 
 @section('content-header')
 <h1 class="m-0"><i class="fas fa-building"></i>Fasilitas Kamar</h1>
@@ -6,6 +6,7 @@
 
 @section('content')
 <x-status/>
+<br>
 <div class="card">
     <div class="card-header">
         <!-- button create -->

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class FasilitasUmum extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+    protected $fillable = [
+        'tipe_kamar',
+        'nama_fas'
+    ];
 }

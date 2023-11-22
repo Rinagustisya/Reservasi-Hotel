@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FasilitasUmum;
 use Illuminate\Http\Request;
 
 class FasUmumController extends Controller
@@ -11,9 +12,15 @@ class FasUmumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('fasilitas_umum.index');
+        $search = $request->search;
+        $data = FasilitasUmum::select('id', 'tipe_kamar', 'nama_fas')
+                ->when($search, function($query, $search){
+                    return $query->where('tipe_kamar', 'like', "%{$search}%");
+                })
+                ->paginate(5);
+        return view('fasilitas_umum.index', ['data'=>$data]);
     }
 
     /**
@@ -23,7 +30,7 @@ class FasUmumController extends Controller
      */
     public function create()
     {
-        //
+        return view('fasilitas_umum.create');
     }
 
     /**
@@ -34,7 +41,17 @@ class FasUmumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tipe_kamar' => 'required',
+            'nama_fas' => 'required',
+        ]);
+
+        FasilitasUmum::create([
+            'tipe_kamar' => $request->tipe_kamar,
+            'nama_fas' => $request->nama_fas
+        ]);
+
+        return redirect()->route('fasUmum.index')->with('status', 'store');
     }
 
     /**

@@ -1,6 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
+        @can('role','resepsionis')
             <form action="?" method="get">
                 <div class="input-group">
                     <input type="date" class="form-control" name="check_in" value="<?php request()->check_in ?>">
@@ -9,6 +10,7 @@
                     </div>
                 </div>
             </form>
+            @endcan
         </div>
         <div class="col-4">
             <!-- ini adalah ghaib -->
