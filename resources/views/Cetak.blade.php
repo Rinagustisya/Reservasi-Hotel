@@ -64,28 +64,28 @@
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Regular.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-Regular.ttf") }}) format("truetype");
                 font-weight: 400;
                 font-style: normal;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-SemiBold.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-SemiBold.ttf") }}) format("truetype");
                 font-weight: 600;
                 font-style: normal;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-SemiBoldItalic.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-SemiBoldItalic.ttf") }}) format("truetype");
                 font-weight: 600;
                 font-style: italic;
             }
     
             @font-face {
                 font-family: 'Open Sans';
-                src: url({{ storage_path("fonts/static/OpenSans/OpenSans-Italic.ttf") }}) format("truetype");
+                src: url({{ storage_path("fonts/static/OpenSans-Italic.ttf") }}) format("truetype");
                 font-weight: 400;
                 font-style: italic;
             }
