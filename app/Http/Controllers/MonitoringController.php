@@ -15,10 +15,15 @@ class MonitoringController extends Controller
     public function index(Request $request)
     {
         $search = $request->search;
+        $checkInDate = $request->check_in; 
         $data = Pesan::select('id', 'nama_tamu', 'nama_pemesan', 'check_in',  'check_out', 'jenis_kamar', 'foto_user' , 'jumlah_kamar', 'status')
                 ->when($search, function($query, $search){
                     return $query->where('nama_tamu', 'like', "%{$search}%")
                             ->orWhere('status', 'like', "%{$search}%");
+                })
+                ->when($checkInDate, function ($query, $checkInDate) {
+                    // Tambahkan kondisi where untuk tanggal check-in
+                    return $query->whereDate('check_in', '=', $checkInDate);
                 })
                 ->paginate(5);
         return view('kamar.moni', ['data'=>$data]);

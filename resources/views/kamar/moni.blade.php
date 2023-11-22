@@ -43,7 +43,7 @@
     </div>
 
     <div class="card-body py-0">
-        {{ $data->appends(['search' => request()->search ])->links('pagenation') }}
+        {{ $data->appends(['search' => request()->search , 'checkin' => request()->checkin ])->links('pagenation') }}
     </div>
 </div>
 @endsection
