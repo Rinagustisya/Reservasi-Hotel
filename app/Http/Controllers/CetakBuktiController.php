@@ -29,7 +29,7 @@ class CetakBuktiController extends Controller
             'creation_date' => date('M d, Y'),
         ];
         $pdf = PDF::loadView('cetak', compact('data','invoiceData', 'firstData'));
-        return $pdf->download('cetak.pdf');
+        return $pdf->download('BuktiReservasiHotel.pdf');
     }
 
     /**

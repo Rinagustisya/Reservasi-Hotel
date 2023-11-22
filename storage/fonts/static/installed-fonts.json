@@ -1,16 +1,16 @@
 {
     "open sans": {
-        "normal": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_normal_0e292995f5c7594249f1be68ea134007",
-        "600": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_600_94bd37ae8db4193a6fb233f400ad3519",
-        "600_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_600_italic_dd7743024ba7335c599cc29c2d49ad00",
-        "italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_italic_c45479b5d609dde523c47de02efe180b",
-        "bold": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_bold_8ba25ec3bdcca5931c775b6e949fc27f",
-        "bold_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_bold_italic_18aaa69d3fc317ac10a42201e3ef386f",
-        "800": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_800_2db221886663eb2c9fb35f76012d9c3a",
-        "800_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_800_italic_c5b3e76b866e6bf08364f355ce1a5b5a",
-        "300": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_300_9ebcc1c32503fce8fcd0836ea4378899",
-        "300_italic": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_300_italic_b22bc788dfac3d85fcd07c219be5307e",
-        "500": "D:\\xampp8.2.4\\htdocs\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_500_fbf5cd2511eef8dad6a09a7ae1310660",
-        "500_italic": "open_sans_500_italic_3d12029813512ccb29e8f30e82633c4f"
+        "normal": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_normal_f9fdfaaabbc82e66b1d33785d6f997aa",
+        "600": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_600_eb14d5ed1c841016d0e1872695a4e6d7",
+        "600_italic": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_600_italic_d153e941aa91c52ff3131f42aeae8e7a",
+        "italic": "open_sans_italic_008d16c944496e97dbb9667ed78da7ac",
+        "bold": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_bold_9423b57e9b4c5eb8563fc3abb885090c",
+        "bold_italic": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_bold_italic_6039c25846a19e9206ccf790743059b7",
+        "800": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_800_37b450515c9b8c9ac8cd53e60dc07845",
+        "800_italic": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_800_italic_cfa64b6d4b0efdd6fe9bd077d258feb1",
+        "300": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_300_bd6a2981f64bcaedea1df1d133516799",
+        "300_italic": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_300_italic_65751142f01445f036205edf301a033a",
+        "500": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_500_3c41158c602ebc6215853a1dca0ff85b",
+        "500_italic": "C:\\Users\\Rina\\Documents\\GitHub\\Reservasi-Hotel\\storage\\fonts\/static\/\/open_sans_500_italic_c0f9b11f124afc3bc11e46f54f9a7c4d"
     }
 }
