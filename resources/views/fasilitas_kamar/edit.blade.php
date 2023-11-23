@@ -12,11 +12,9 @@
                <x-input-admin label="Keterangan" name="keterangan" :value="$row->keterangan" readonly/>
                 <div class="container">
                 <div class="akucinta">
-                    <x-input-admin label="Foto" name="foto" type="file" keterangan="Foto bertipe : png, jpg, jpeg" :value="$row->foto_kamar" />
-                        @if ($row->foto)
-                            <img src="{{ url('images/kamar/'.$row->foto) }}" class="img-fluid" >
-                        @endif
-                    </div>
+                    <input type="hidden" name="foto_user" value="{{ $row->foto }}">
+                  <img src="{{ route('show.foto', ['filename1' => basename($row->foto)]) }}" alt="data diri" class="img-fluid">
+               </div>
                </div>
             </x-form-edit>
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.admin',['title'=>'Tambah Fasilitas Umum'])
 
 @section('content-header')
-<h1 class="m-0"><i class="fas fa-building"></i>Fasilitas Kamar</h1>
+<h1 class="m-0"><i class="far fa-building"></i>Fasilitas Umum</h1>
 @endsection
 
 @section('content')

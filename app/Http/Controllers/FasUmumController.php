@@ -71,9 +71,9 @@ class FasUmumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(FasilitasUmum $fasUmum)
     {
-        //
+        return view('fasilitas_umum.edit', ['row'=>$fasUmum]);
     }
 
     /**
@@ -83,9 +83,21 @@ class FasUmumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,FasilitasUmum $fasUmum )
     {
-        //
+        $request->validate([
+            'tipe_kamar' => 'required',
+            'foto_kamar' => 'required',
+        ]);
+
+        $arr = [
+            'tipe_kamar' => $request->tipe_kamar,
+            'foto_kamar' => $request->foto_kamar
+        ];
+
+        $fasUmum->update($arr);
+
+        return redirect()->route('fasUmum.index')->with('status', 'update');
     }
 
     /**
@@ -94,8 +106,10 @@ class FasUmumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(FasilitasUmum $fasUmum)
     {
-        //
+        $fasUmum->delete();
+
+        return back()->with('status', 'destroy');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.admin', ['title'=>'Fas Umum'])
 
 @section('content-header')
-<h1 class="mb-0">Fasilitas Umum</h1>
+<h1 class="mb-0"><i class="far fa-building"></i>Fasilitas Umum</h1>
 @endsection
 
 @section('content')
@@ -33,9 +33,9 @@
                     <td>{{ $row->nama_fas}}</td>
                     <td>
                     @if ($row)
-                        <x-btn-edit :link="route('fas.showData',['fas'=>$row->id])" />
+                        <x-btn-edit :link="route('fasUmum.edit',['fasUmum'=>$row->id])" />
                     @endif
-                        <x-btn-delete :link="route('fas.hapus',['fasilitas'=>$row->id])" />
+                        <x-btn-delete :link="route('fasUmum.destroy',['fasUmum'=>$row->id])" />
                     </td>
                 </tr>
                 @endforeach

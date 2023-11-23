@@ -21,7 +21,6 @@
                     <th>Tipe Kamar</th>
                     <th>Harga Kamar</th>
                     <th>Jumlah Kamar</th> 
-                    <th>Status</th> 
                     <th>Aksi</th> 
                     <!-- <th>Deskripsi Kamar</th>  -->
                 </tr>
@@ -34,12 +33,10 @@
                     <td>{{ ucwords($row->nama_kamar) }}</td>
                     <td>Rp. {{ number_format($row->harga_kamar,2,',','.') }}</td>
                     <td>{{ $row->status }}</td>
-                    <td>{{ $row->jum_kamar }}</td>
                     <td>
                         <x-btn-edit :link="route('kamar.edit',['kamar'=>$row->id])" />
                         <x-btn-delete :link="route('kamar.destroy',['kamar'=>$row->id])" />
                     </td>
-                    <!-- <td>{{ $row->deskripsi_kamar }}</td> -->
                 </tr>
                 @endforeach
             </tbody>

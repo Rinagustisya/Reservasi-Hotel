@@ -33,7 +33,7 @@
                     <td>{{ $row->keterangan}}</td>
                     <td>
                     @if ($row)
-                        <x-btn-edit :link="route('fas.showData',['fas'=>$row->id])" />
+                        <x-btn-edit :link="route('fask.edit',['fas'=>$row->id])" />
                     @endif
                         <x-btn-delete :link="route('fas.hapus',['fasilitas'=>$row->id])" />
                     </td>
