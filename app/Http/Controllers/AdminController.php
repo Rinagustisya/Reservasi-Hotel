@@ -140,7 +140,7 @@ class AdminController extends Controller
 
         $request->validate([
             'nama' => 'required',
-            'username' => 'required|alpha_dash|unique:admins,username,{$admin->id}',
+            'username' => 'required|alpha_dash|unique:admins,username,'.$admin->id,
             'password' => 'nullable|min:4|confirmed'
         ]);
 
