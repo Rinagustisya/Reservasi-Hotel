@@ -43,11 +43,13 @@ Route::group([
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
         Route::resource('fasilitas', 'FasilitasController');
+
+        // fasilitas umum
         Route::resource('fasUmum', 'FasUmumController');
         Route::get('/fas/edit', 'FasUmumController@edit')->name('fas.edit');
         
         // fasilitas kamar
-        Route::get('/fask/edit', 'FasilitasController@edit')->name('fask.edit');
+        Route::get('/fask/edit{fas}', 'FasilitasController@edit')->name('fask.edit');
         Route::get('/fas/hapus', 'FasilitasController@destroy')->name('fas.hapus');
         Route::get('/fas/update', 'FasilitasController@update')->name('fas.update');
         Route::get('/fas/showdata', 'FasilitasController@showData')->name('fas.showData');

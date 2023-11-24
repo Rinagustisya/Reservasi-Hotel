@@ -79,10 +79,17 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fasilitas $fas)
-    {
-        return view('fasilitas_kamar.edit', ['row'=>$fas]);
+    public function edit(Request $request)
+{
+    $queryId = $request->query('id');
+    $fas = Fasilitas::find($queryId);
+
+    if ($fas) {
+        return view('fasilitas_kamar.edit', ['row' => $fas]);
+    } else {
+        return redirect()->route('fasilitas.index')->with('error', 'Fasilitas not found');
     }
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -122,17 +129,14 @@ class FasilitasController extends Controller
      */
     public function destroy($id)
     {
-        $fasilitas = Fasilitas::find($id);
+    $fasilitas = Fasilitas::find($id);
 
-    // Pastikan fasilitas ditemukan
     if (!$fasilitas) {
         return back()->with('error', 'Fasilitas tidak ditemukan');
     }
-    // Hapus foto jika ada
     if ($fasilitas->foto) {
         $file = 'public/fasilitas/' . $fasilitas->foto;
         
-        // Periksa apakah file ada di storage
         if (Storage::exists($file)) {
             Storage::delete($file);
         }
