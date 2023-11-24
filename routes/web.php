@@ -42,16 +42,16 @@ Route::group([
         Route::group(['middleware' =>['can:role,"admin"']], function(){
         Route::resource('admin', 'AdminController');
         Route::resource('kamar', 'KamarController');
-        Route::resource('fasilitas', 'FasilitasController');
-
+        
         // fasilitas umum
         Route::resource('fasUmum', 'FasUmumController');
         Route::get('/fas/edit', 'FasUmumController@edit')->name('fas.edit');
         
         // fasilitas kamar
-        Route::get('/fask/edit{fas}', 'FasilitasController@edit')->name('fask.edit');
+        Route::resource('fasilitas', 'FasilitasController');
+        Route::get('/fask/edit/{fasId}', 'FasilitasController@edit')->name('fask.edit');
         Route::get('/fas/hapus', 'FasilitasController@destroy')->name('fas.hapus');
-        Route::get('/fas/update', 'FasilitasController@update')->name('fas.update');
+        Route::get('/admin/fas/update/{fasId}', 'FasilitasController@update')->name('fas.update');
         Route::get('/fas/showdata', 'FasilitasController@showData')->name('fas.showData');
         Route::get('/show-foto/{filename1}', 'FasilitasController@show1')->name('show.foto');
         });

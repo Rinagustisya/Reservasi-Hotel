@@ -79,10 +79,9 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(int $fasId)
 {
-    $queryId = $request->query('id');
-    $fas = Fasilitas::find($queryId);
+    $fas = Fasilitas::find($fasId);
 
     if ($fas) {
         return view('fasilitas_kamar.edit', ['row' => $fas]);
@@ -116,10 +115,31 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Fasilitas $fasId)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'keterangan' => 'required',
+            'foto' => 'required|image|mimes:png,jpg,jpeg'
+        ]);
+
+        // Update data
+        $fasId->update([
+            'nama' => $request->nama,
+            'keterangan' => $request->keterangan,
+            'foto' => $request->keterangan
+        ]);
+
+        // Update foto jika ada
+        if ($request->hasFile('foto')) {
+            $image = $request->file('foto');
+            $image->storeAs('public/fasilitas', $image->hashName());
+            $fasId->update(['foto' => $image->hashName()]);
+        }
+
+        return redirect()->route('fasilitas.index')->with('status', 'update');
     }
+
 
     /**
      * Remove the specified resource from storage.

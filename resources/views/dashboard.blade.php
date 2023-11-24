@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="card">
-    <div class="card-body">
-        <h3 style="color: green"><strong>Selamat Datang &nbsp; {{ Auth::user()->nama }} !!</strong></h3>
+    <div class="card-header">
+        <h3>Selamat Datang di Aplikasi Reservasi Hotel &nbsp; {{ Auth::user()->nama }}</h3>
     </div>
 </div>
 @endsection
