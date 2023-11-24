@@ -45,13 +45,15 @@ Route::group([
         
         // fasilitas umum
         Route::resource('fasUmum', 'FasUmumController');
-        Route::get('/fas/edit', 'FasUmumController@edit')->name('fas.edit');
+        Route::get('/fasu/edit/{fasUid}', 'FasUmumController@edit')->name('fasu.edit');
+        Route::delete('/fasu/edit/{fasUid}', 'FasUmumController@destroy')->name('fasu.delete');
+        Route::put('/fasu/update/{fasUid}', 'FasUmumController@update')->name('fasu.update');
         
         // fasilitas kamar
         Route::resource('fasilitas', 'FasilitasController');
         Route::get('/fask/edit/{fasId}', 'FasilitasController@edit')->name('fask.edit');
-        Route::get('/fas/hapus', 'FasilitasController@destroy')->name('fas.hapus');
-        Route::get('/admin/fas/update/{fasId}', 'FasilitasController@update')->name('fas.update');
+        Route::delete('/fas/hapus/{fasId}', 'FasilitasController@destroy')->name('fask.hapus');
+        Route::put('/fas/update/{fasId}', 'FasilitasController@update')->name('fask.update');
         Route::get('/fas/showdata', 'FasilitasController@showData')->name('fas.showData');
         Route::get('/show-foto/{filename1}', 'FasilitasController@show1')->name('show.foto');
         });

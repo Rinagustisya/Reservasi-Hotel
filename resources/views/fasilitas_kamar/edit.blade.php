@@ -7,7 +7,7 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-           <x-form-edit :action="route('fas.update',['fasId'=>$row->id])" :upload="true">
+           <x-form-edit :action="route('fask.update',['fasId'=>$row->id])" :upload="true">
                <x-input-admin label="Nama" name="nama" :value="$row->nama" />
                <x-input-admin label="Keterangan" name="keterangan" :value="$row->keterangan" />
                 <div class="container">

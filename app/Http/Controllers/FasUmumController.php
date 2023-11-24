@@ -71,9 +71,15 @@ class FasUmumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(FasilitasUmum $fasUmum)
+    public function edit(int $fasUid)
     {
-        return view('fasilitas_umum.edit', ['row'=>$fasUmum]);
+        $fasu = FasilitasUmum::find($fasUid);
+
+    if ($fasu) {
+        return view('fasilitas_umum.edit', ['row' => $fasu]);
+    } else {
+        return redirect()->route('fasUmum.index')->with('error', 'Fasilitas not found');
+    }
     }
 
     /**
@@ -83,20 +89,26 @@ class FasUmumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,FasilitasUmum $fasUmum )
+    public function update(Request $request, $fasUid)
     {
+        $fas = FasilitasUmum::find($fasUid);
+    
+        if (!$fas) {
+            return redirect()->route('fasilitas.index')->with('error', 'Fasilitas not found');
+        }
+    
         $request->validate([
             'tipe_kamar' => 'required',
-            'foto_kamar' => 'required',
+            'nama_fas' => 'required',
         ]);
-
-        $arr = [
+    
+        // Update data
+        $fas->update([
             'tipe_kamar' => $request->tipe_kamar,
-            'foto_kamar' => $request->foto_kamar
-        ];
-
-        $fasUmum->update($arr);
-
+            'nama_fas' => $request->nama_fas
+        ]);
+    
+    
         return redirect()->route('fasUmum.index')->with('status', 'update');
     }
 
@@ -106,10 +118,11 @@ class FasUmumController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FasilitasUmum $fasUmum)
+    public function destroy(int $fasUid)
     {
-        $fasUmum->delete();
+        $fas = FasilitasUmum::find($fasUid);
 
+        $fas->delete();
         return back()->with('status', 'destroy');
     }
 }

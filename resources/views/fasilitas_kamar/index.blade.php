@@ -34,8 +34,8 @@
                     <td>
                     @if ($row)
                     <x-btn-edit :link="route('fask.edit',['fasId'=>$row->id])" />
+                    <x-btn-delete :link="route('fask.hapus',['fasId'=>$row->id])" />
                     @endif
-                        <x-btn-delete :link="route('fas.hapus',['fasilitas'=>$row->id])" />
                     </td>
                 </tr>
                 @endforeach

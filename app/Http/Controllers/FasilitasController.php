@@ -115,30 +115,37 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fasilitas $fasId)
-    {
-        $request->validate([
-            'nama' => 'required',
-            'keterangan' => 'required',
-            'foto' => 'required|image|mimes:png,jpg,jpeg'
-        ]);
+    public function update(Request $request, $fasId)
+{
+    $fas = Fasilitas::find($fasId);
 
-        // Update data
-        $fasId->update([
-            'nama' => $request->nama,
-            'keterangan' => $request->keterangan,
-            'foto' => $request->keterangan
-        ]);
-
-        // Update foto jika ada
-        if ($request->hasFile('foto')) {
-            $image = $request->file('foto');
-            $image->storeAs('public/fasilitas', $image->hashName());
-            $fasId->update(['foto' => $image->hashName()]);
-        }
-
-        return redirect()->route('fasilitas.index')->with('status', 'update');
+    if (!$fas) {
+        return redirect()->route('fasilitas.index')->with('error', 'Fasilitas not found');
     }
+
+    $request->validate([
+        'nama' => 'required',
+        'keterangan' => 'required',
+        'foto' => 'image|mimes:png,jpg,jpeg'
+    ]);
+
+    // Update data
+    $fas->nama = $request->nama;
+    $fas->keterangan = $request->keterangan;
+
+    // Update foto if available
+    if ($request->hasFile('foto')) {
+        $image = $request->file('foto');
+        $image->storeAs('public/fasilitas', $image->hashName());
+        $fas->foto = $image->hashName();
+    }
+
+    $fas->save();
+
+    return redirect()->route('fasilitas.index')->with('status', 'update');
+}
+
+    
 
 
     /**
@@ -147,24 +154,20 @@ class FasilitasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(int $fasId)
     {
-    $fasilitas = Fasilitas::find($id);
+        $fas = Fasilitas::find($fasId);
 
-    if (!$fasilitas) {
-        return back()->with('error', 'Fasilitas tidak ditemukan');
-    }
-    if ($fasilitas->foto) {
-        $file = 'public/fasilitas/' . $fasilitas->foto;
-        
-        if (Storage::exists($file)) {
-            Storage::delete($file);
+        if ($fas->foto) {
+            $file = 'public/fas$fas/' . $fas->foto;
+            
+            if (Storage::exists($file)) {
+                Storage::delete($file);
+            }
         }
-    }
+        // Hapus fasilitas dari database
+        $fas->delete();
 
-    // Hapus fasilitas dari database
-    $fasilitas->delete();
-
-    return back()->with('status', 'destroy');
+        return back()->with('status', 'destroy');
     }
 }
